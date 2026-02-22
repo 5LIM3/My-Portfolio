@@ -292,28 +292,24 @@
         <p>Have a project in mind? Need a secure, high-performance application? I'm available for freelance projects and open to discussing how I can help you build smarter, faster, and safer.</p>
         <div class="contact-links">
           <a href="mailto:slime@5limestackdevs.com" class="contact-link">
-            <span class="contact-link-icon"></span>
             <div class="contact-link-info">
               <span class="contact-link-label">Email</span>
               <span class="contact-link-value">slime@5limestackdevs.com</span>
             </div>
           </a>
           <a href="https://github.com/5LIM3" target="_blank" class="contact-link">
-            <span class="contact-link-icon"></span>
             <div class="contact-link-info">
               <span class="contact-link-label">GitHub</span>
               <span class="contact-link-value">github.com/5LIM3</span>
             </div>
           </a>
           <a href="https://www.linkedin.com/in/alozie-anyatonwu-b0272a229" target="_blank" class="contact-link">
-            <span class="contact-link-icon"></span>
             <div class="contact-link-info">
               <span class="contact-link-label">LinkedIn</span>
               <span class="contact-link-value">Alozie Anyatonwu</span>
             </div>
           </a>
           <a href="https://wa.me/2347040951519" target="_blank" class="contact-link">
-            <span class="contact-link-icon"></span>
             <div class="contact-link-info">
               <span class="contact-link-label">WhatsApp</span>
               <span class="contact-link-value">+234 704 095 1519</span>
@@ -321,31 +317,31 @@
           </a>
         </div>
       </div>
-      <div class="contact-form reveal reveal-delay-2">
+      <form id="contact-form" class="contact-form reveal reveal-delay-2">
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">Your Name</label>
-            <input type="text" class="form-input" placeholder="John Doe"/>
+            <input type="text" name="name" class="form-input" placeholder="John Doe" required/>
           </div>
           <div class="form-group">
             <label class="form-label">Email</label>
-            <input type="email" class="form-input" placeholder="you@example.com"/>
+            <input type="email" name="email" class="form-input" placeholder="you@example.com" required/>
           </div>
         </div>
         <div class="form-group">
           <label class="form-label">Subject</label>
-          <input type="text" class="form-input" placeholder="Project Inquiry / Collaboration"/>
+          <input type="text" name="subject" class="form-input" placeholder="Project Inquiry / Collaboration" required/>
         </div>
         <div class="form-group">
           <label class="form-label">Budget Range</label>
-          <input type="text" class="form-input" placeholder="e.g. $500 - $1000"/>
+          <input type="text" name="budget" class="form-input" placeholder="e.g. $500 - $1000"/>
         </div>
         <div class="form-group">
           <label class="form-label">Message</label>
-          <textarea class="form-textarea" placeholder="Tell me about your project..."></textarea>
+          <textarea name="message" class="form-textarea" placeholder="Tell me about your project..." required></textarea>
         </div>
-        <button class="btn-submit" onclick="handleSubmit(this)">Send Message →</button>
-      </div>
+        <button type="submit" id="submit-btn" class="btn-submit">Send Message →</button>
+      </form>
     </div>
   </section>
 
@@ -356,10 +352,4 @@
     <div class="footer-socials">
       <a href="https://github.com/5LIM3" target="_blank" class="footer-social">GitHub</a>
       <a href="https://www.linkedin.com/in/alozie-anyatonwu-b0272a229" target="_blank" class="footer-social">LinkedIn</a>
-      <a href="https://wa.me/2347040951519" target="_blank" class="footer-social">WhatsApp</a>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+      <a href="https://wa.
