@@ -67,55 +67,17 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// ── FORM SUBMIT (Formspree) ──
-const contactForm = document.getElementById('contact-form');
-const submitBtn = document.getElementById('submit-btn');
-
-contactForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
-
-  submitBtn.textContent = 'Sending...';
-  submitBtn.disabled = true;
-
-  const data = new FormData(contactForm);
-
-  try {
-    const response = await fetch('https://formspree.io/f/mnjbgekj', {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    });
-
-    if (response.ok) {
-      submitBtn.textContent = 'Message Sent ✓';
-      submitBtn.style.background = '#00aa44';
-      submitBtn.style.boxShadow = '0 0 20px rgba(0,170,68,0.4)';
-      contactForm.reset();
-      setTimeout(() => {
-        submitBtn.textContent = 'Send Message →';
-        submitBtn.style.background = '';
-        submitBtn.style.boxShadow = '';
-        submitBtn.disabled = false;
-      }, 3000);
-    } else {
-      submitBtn.textContent = 'Failed. Try Again.';
-      submitBtn.style.background = '#aa0000';
-      submitBtn.disabled = false;
-      setTimeout(() => {
-        submitBtn.textContent = 'Send Message →';
-        submitBtn.style.background = '';
-      }, 3000);
-    }
-  } catch (err) {
-    submitBtn.textContent = 'Error. Try Again.';
-    submitBtn.style.background = '#aa0000';
-    submitBtn.disabled = false;
-    setTimeout(() => {
-      submitBtn.textContent = 'Send Message →';
-      submitBtn.style.background = '';
-    }, 3000);
-  }
-});
+// ── FORM SUBMIT ──
+function handleSubmit(btn) {
+  btn.textContent = 'Message Sent ✓';
+  btn.style.background = '#00aa44';
+  btn.style.boxShadow = '0 0 20px rgba(0,170,68,0.4)';
+  setTimeout(() => {
+    btn.textContent = 'Send Message →';
+    btn.style.background = '';
+    btn.style.boxShadow = '';
+  }, 3000);
+}
 
 // ── NAVBAR SCROLL STYLE ──
 window.addEventListener('scroll', () => {

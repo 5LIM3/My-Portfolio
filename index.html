@@ -126,7 +126,7 @@
     <h2 class="section-title">Services &amp; <span>Expertise</span></h2>
     <div class="services-grid">
       <div class="service-card reveal">
-        <span class="service-icon"></span>
+        <span class="service-icon">🌐</span>
         <div class="service-title">Web Development</div>
         <p class="service-desc">End-to-end web applications built for speed, scale, and security. From landing pages to complex platforms, I deliver clean, maintainable code that performs.</p>
         <div class="service-tags">
@@ -137,7 +137,7 @@
         </div>
       </div>
       <div class="service-card reveal reveal-delay-2">
-        <span class="service-icon"></span>
+        <span class="service-icon">📱</span>
         <div class="service-title">Mobile App Development</div>
         <p class="service-desc">Cross-platform mobile applications with intuitive UX and robust backends. I build apps that users love and businesses rely on, with security baked in from day one.</p>
         <div class="service-tags">
@@ -147,7 +147,7 @@
         </div>
       </div>
       <div class="service-card reveal reveal-delay-3">
-        <span class="service-icon"></span>
+        <span class="service-icon">⚙️</span>
         <div class="service-title">API Development</div>
         <p class="service-desc">Secure, scalable, and well-documented REST APIs. From authentication systems to real-time data pipelines, I design APIs that are a joy to integrate with.</p>
         <div class="service-tags">
@@ -292,24 +292,28 @@
         <p>Have a project in mind? Need a secure, high-performance application? I'm available for freelance projects and open to discussing how I can help you build smarter, faster, and safer.</p>
         <div class="contact-links">
           <a href="mailto:slime@5limestackdevs.com" class="contact-link">
+            <span class="contact-link-icon">✉️</span>
             <div class="contact-link-info">
               <span class="contact-link-label">Email</span>
               <span class="contact-link-value">slime@5limestackdevs.com</span>
             </div>
           </a>
           <a href="https://github.com/5LIM3" target="_blank" class="contact-link">
+            <span class="contact-link-icon">⌥</span>
             <div class="contact-link-info">
               <span class="contact-link-label">GitHub</span>
               <span class="contact-link-value">github.com/5LIM3</span>
             </div>
           </a>
           <a href="https://www.linkedin.com/in/alozie-anyatonwu-b0272a229" target="_blank" class="contact-link">
+            <span class="contact-link-icon">💼</span>
             <div class="contact-link-info">
               <span class="contact-link-label">LinkedIn</span>
               <span class="contact-link-value">Alozie Anyatonwu</span>
             </div>
           </a>
           <a href="https://wa.me/2347040951519" target="_blank" class="contact-link">
+            <span class="contact-link-icon">💬</span>
             <div class="contact-link-info">
               <span class="contact-link-label">WhatsApp</span>
               <span class="contact-link-value">+234 704 095 1519</span>
@@ -317,31 +321,31 @@
           </a>
         </div>
       </div>
-      <form id="contact-form" class="contact-form reveal reveal-delay-2">
+      <div class="contact-form reveal reveal-delay-2">
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">Your Name</label>
-            <input type="text" name="name" class="form-input" placeholder="John Doe" required/>
+            <input type="text" class="form-input" placeholder="John Doe"/>
           </div>
           <div class="form-group">
             <label class="form-label">Email</label>
-            <input type="email" name="email" class="form-input" placeholder="you@example.com" required/>
+            <input type="email" class="form-input" placeholder="you@example.com"/>
           </div>
         </div>
         <div class="form-group">
           <label class="form-label">Subject</label>
-          <input type="text" name="subject" class="form-input" placeholder="Project Inquiry / Collaboration" required/>
+          <input type="text" class="form-input" placeholder="Project Inquiry / Collaboration"/>
         </div>
         <div class="form-group">
           <label class="form-label">Budget Range</label>
-          <input type="text" name="budget" class="form-input" placeholder="e.g. $500 - $1000"/>
+          <input type="text" class="form-input" placeholder="e.g. $500 - $1000"/>
         </div>
         <div class="form-group">
           <label class="form-label">Message</label>
-          <textarea name="message" class="form-textarea" placeholder="Tell me about your project..." required></textarea>
+          <textarea class="form-textarea" placeholder="Tell me about your project..."></textarea>
         </div>
-        <button type="submit" id="submit-btn" class="btn-submit">Send Message →</button>
-      </form>
+        <button class="btn-submit" onclick="handleSubmit(this)">Send Message →</button>
+      </div>
     </div>
   </section>
 
@@ -352,4 +356,10 @@
     <div class="footer-socials">
       <a href="https://github.com/5LIM3" target="_blank" class="footer-social">GitHub</a>
       <a href="https://www.linkedin.com/in/alozie-anyatonwu-b0272a229" target="_blank" class="footer-social">LinkedIn</a>
-      <a href="https://wa.
+      <a href="https://wa.me/2347040951519" target="_blank" class="footer-social">WhatsApp</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
