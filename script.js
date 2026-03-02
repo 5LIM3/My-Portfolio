@@ -68,14 +68,48 @@ window.addEventListener('scroll', () => {
 });
 
 // ── FORM SUBMIT ──
-function handleSubmit(btn) {
-  btn.textContent = 'Message Sent ✓';
-  btn.style.background = '#00aa44';
-  btn.style.boxShadow = '0 0 20px rgba(0,170,68,0.4)';
+async function handleSubmit(btn) {
+  const data = {
+    name: document.getElementById('contact-name').value,
+    email: document.getElementById('contact-email').value,
+    subject: document.getElementById('contact-subject').value,
+    budget: document.getElementById('contact-budget').value,
+    message: document.getElementById('contact-message').value
+  };
+
+  if (!data.name || !data.email || !data.message) {
+    alert('Please fill in Name, Email and Message');
+    return;
+  }
+
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch('https://fivelim3stackdevs-backend.onrender.com/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    if (res.ok) {
+      btn.textContent = 'Message Sent ✓';
+      btn.style.background = '#00aa44';
+      btn.style.boxShadow = '0 0 20px rgba(0,170,68,0.4)';
+    } else {
+      btn.textContent = 'Failed. Try Again';
+      btn.style.background = '#aa0000';
+    }
+  } catch (err) {
+    btn.textContent = 'Error. Try Again';
+    btn.style.background = '#aa0000';
+  }
+
   setTimeout(() => {
     btn.textContent = 'Send Message →';
     btn.style.background = '';
     btn.style.boxShadow = '';
+    btn.disabled = false;
   }, 3000);
 }
 
