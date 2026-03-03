@@ -86,7 +86,7 @@ async function handleSubmit(btn) {
   btn.disabled = true;
 
   try {
-    const res = await fetch('https://fivelim3stackdevs-backend.onrender.com/contact', {
+    const res = await fetch('https://fivelim3stackdevs-backend.onrender.com/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
