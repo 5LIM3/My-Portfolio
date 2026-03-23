@@ -827,6 +827,7 @@ footer {
 /* ─── GLITCH EFFECT ─── */
 .glitch {
   position: relative;
+  overflow: hidden;
 }
 .glitch::before, .glitch::after {
   content: attr(data-text);
@@ -866,10 +867,4 @@ footer {
   background: linear-gradient(90deg, transparent, var(--red), transparent);
   margin: 0;
   opacity: 0.4;
-}
-
-/* ─── GLITCH MOBILE FIX ─── */
-@media(max-width: 900px) {
-  .glitch::before, .glitch::after { display: none; }
-  .hero-brand { overflow: visible; white-space: normal; max-width: 100%; font-size: clamp(1.3rem, 7vw, 2rem); }
 }
