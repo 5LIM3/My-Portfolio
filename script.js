@@ -67,17 +67,17 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// ── FORM SUBMIT ──
-async function handleSubmit(btn) {
-  const data = {
-    name: document.getElementById('contact-name').value,
-    email: document.getElementById('contact-email').value,
-    subject: document.getElementById('contact-subject').value,
-    budget: document.getElementById('contact-budget').value,
-    message: document.getElementById('contact-message').value
-  };
+// ── EMAILJS FORM SUBMIT ──
+emailjs.init('6JXZWG6RPHwqpg0Rs');
 
-  if (!data.name || !data.email || !data.message) {
+async function handleSubmit(btn) {
+  const name = document.getElementById('contact-name').value;
+  const email = document.getElementById('contact-email').value;
+  const subject = document.getElementById('contact-subject').value;
+  const budget = document.getElementById('contact-budget').value;
+  const message = document.getElementById('contact-message').value;
+
+  if (!name || !email || !message) {
     alert('Please fill in Name, Email and Message');
     return;
   }
@@ -86,22 +86,20 @@ async function handleSubmit(btn) {
   btn.disabled = true;
 
   try {
-    const res = await fetch('https://fivelim3stackdevs-backend.onrender.com/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
+    await emailjs.send('service_whj7crq', 'template_vmtmb7h', {
+      name: name,
+      email: email,
+      subject: subject || 'No subject',
+      budget: budget || 'Not specified',
+      message: message
     });
 
-    if (res.ok) {
-      btn.textContent = 'Message Sent ✓';
-      btn.style.background = '#00aa44';
-      btn.style.boxShadow = '0 0 20px rgba(0,170,68,0.4)';
-    } else {
-      btn.textContent = 'Failed. Try Again';
-      btn.style.background = '#aa0000';
-    }
+    btn.textContent = 'Message Sent ✓';
+    btn.style.background = '#00aa44';
+    btn.style.boxShadow = '0 0 20px rgba(0,170,68,0.4)';
   } catch (err) {
-    btn.textContent = 'Error. Try Again';
+    console.error('EmailJS error:', err);
+    btn.textContent = 'Failed. Try Again';
     btn.style.background = '#aa0000';
   }
 
