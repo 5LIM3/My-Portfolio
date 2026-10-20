@@ -809,7 +809,8 @@ footer {
   .btn-primary, .btn-outline { width: 100%; text-align: center; }
   .hero-bg-text { display: none; }
   .hero-corner, .hero-corner-bl { display: none; }
-  .glitch::before, .glitch::after { display: none; }
+  .glitch { overflow: hidden; }
+  .glitch::before, .glitch::after { width: 100%; max-width: 100%; }
   .section { padding: 60px 20px; }
   .section-title { font-size: clamp(1.4rem, 6vw, 2rem); }
   .stats-bar { flex-wrap: wrap; }
